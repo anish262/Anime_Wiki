@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+html {
+  height: 100%;
+}
+body { 
+  border: 5px solid #F7DE12;
+  height: 100%;
+  background-image: url(https://drive.google.com/uc?id=0B8Y1CjRCMbFqajA5cVRtRzlYcEk);
+  background-size: cover;
+  display: table;
+  width: 100%;
+   }
+.table-cell {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+.middle {
+  min-height: 200px;
+  background: white;
+  border: 5px solid #F40000;
+  margin-left: 5em;
+  max-width: 700px;
+  padding: 1rem;
+}
+.quote:before,
+.quote:after{
+  content: '"';
+}
+.who:before {
+  content: "-\a0"
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<script>
+
+var onepunch = [
+	{
+		"quote":"In exchange for power, maybe I've lost something that's essential for a human being?",
+		"when":"Saitama"
+		},
+	{
+		"quote":"If the heroes run and hide, who will stay and fight?",
+		"when":"Saitama"
+		},
+	{
+		"quote":"I've become too strong.",
+		"when":"Saitama"
+		},
+	{
+		"quote":"100 push-ups, 100 sit-ups, 100 squats, and a 10km run EVERY SINGLE DAY!!!",
+		"when":"Saitama"
+		},
+	{
+		"quote":"f you really want to become strong, stop caring about what others think about you. Living your life has nothing to do with what others think.",
+		"when":"Saitama to Fubuki"
+		},
+	{
+		"quote":"You may be after King but I know someone who's stronger. More importantly I am stronger than YOU!",
+		"when":"Genos before he defeats Metal God G4"
+		},
+	{
+		"quote":"You won't survive. You just don't get what being a hero is about. There are all kinds of powerful bad guys in the world. Heroes are the ones who oppose them, even if they are alone. If you just gather people who are weaker than you, you won't last. You'll end up crying when a monster appears that's stronger than you. Your subordinates won't be able to save you. Factions? Newbie crushing? Holding your rank? That has nothing to do with anything! Don't look down on heroes you moron!",
+		"when":"Fubuki"
+		},
+	{
+		"quote":"No one expects much from me... They think a C-Class hero won't be much help. I know that better than anyone. I'm not good enough for Class B. I'm weak. I know that much. No one has to tell me I have no chance of beating you. I already... know that! And yet, I must try. It's not about winning or losing! It's about me taking you on right here, right now!",
+		"when":"An outmatched Mumen Rider, facing the Sea King"
+		},
+	{
+		"quote":"Whenever I face you,I cannot picture myself winning for some reason... Unless I defeat you and wipe this thought, I cannot move on.",
+		"when":"Sonic, regarding Saitama"
+		},
+	{
+  "quote":"And I'm not middle-aged. I'm 37.",
+  "when":"Atomic Samurai"},
+
+{
+  "quote":"Human strength lies in the ability to change yourself!",
+  "when":"Saitama"},
+
+{
+  "quote":"I wanted to be a hero when I was little.",
+  "when":"Saitama"},
+{
+  "quote":"I'm just a guy who's a hero.",
+  "when":"Saitama"},
+{
+  "quote":"I'm not a hero because I want your approval. I do it because I want to!",
+  "when":"Saitama"},
+{
+  "quote":"No one knows who I am.",
+  "when":"Saitama"},
+
+{
+  "quote":"One hundred push-ups. One hundred sit-ups. One hundred squats. And run 10 kilometers. Every Day!!!",
+  "when":"Saitama"},
+{
+  "quote":"Overwhelming strength is boring.",
+  "when":"Saitama"},
+{
+  "quote":"Shorten that to 20 words or less!",
+  "when":"Saitama"},
+{
+  "quote":"Sorry, but I'm not into dudes.",
+  "when":"Saitama"},
+{
+  "quote":"This is almost a real fight!",
+  "when":"Saitama"},
+{
+  "quote":"This is my town... so don't... fall on it!",
+  "when":"Saitama"},
+{
+  "quote":"This is no time to be reading manga!",
+  "when":"Saitama"},
+{
+  "quote":"Today was the Special Sale day!",
+  "when":"Saitama"},
+{
+  "quote":"Well, that's settled...",
+  "when":"Saitama"},
+{
+  "quote":"Wow, these people need a hobby.",
+  "when":"Saitama"},
+{
+  "quote":"You hung up Genos like modern art!",
+  "when":"Saitama"},
+{
+  "quote":"You said you worked hard? Well, maybe you need to work a little longer.",
+  "when":"Saitama"},
+{
+  "quote":"I should have fans!",
+  "when":"Saitama"},
+{
+  "quote":"Consecutive punches... are for finishing off your opponent. You must invest each one with murderous intent. Like this...",
+  "when":"Sea King"},
+{
+  "quote":"Hey, uh... You're unpleasant. So die, would ya?",
+  "when":"Sea King"},
+
+{
+  "quote":"Disposing of the mountain of bodies will be a bigger problem.",
+  "when":"Sonic"},
+{
+  "quote":"Do you think you can run... from me?!",
+  "when":"Sonic"},
+{
+  "quote":"He was in my way, so I took him out.",
+  "when":"Sonic"},
+{
+  "quote":"I knew it! My moves are the fastest and strongest!!",
+  "when":"Sonic"},
+
+{
+  "quote":"The thought of playing hero with you losers nauseates me!",
+  "when":"Sonic"},
+{
+  "quote":"Worry about their lives.",
+  "when":"Sonic"},
+{
+  "quote":"You stopped two of my attacks. And that's a problem.",
+  "when":"Sonic"},
+{
+  "quote":"If it means running into creatures like this... I definitely don't want to live... here.",
+  "when":"Spring Mustache"},
+{
+  "quote":"The must not live. They are evil.",
+  "when":"Sweet Mask"},
+{
+  "quote":"To calm the populace’s unease, a hero must be tough, strong and beautiful, as well as be able to promptly and splendidly eradicate evil.",
+  "when":"Sweet Mask"},
+
+
+];
+function getQuote(){
+  var i = _.random(0,onepunch.length);
+  $('.js-quote').text(onepunch[i].quote);
+  $('.js-whoSaidIt').text(onepunch[i].when);
+}
+
+</script>
+</head>
+<body>
+
+    <div class="table-cell">
+        <div class="middle">
+        <h1>One Punch Man Quotes</h1>
+      
+        <p class="quote js-quote">Click the button below to get a random quote.</p>
+        <p class="who js-whoSaidIt"></p>
+        <button class="btn btn-success" onclick="getQuote()">Get Quote</button>
+        </div>
+      </div>
+      
+<script>
+   
+</script>
+
+</body>
+</html>

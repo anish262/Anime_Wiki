@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: url(https://cdn.wallpapersafari.com/73/33/glVb35.jpg);
+  background-size: cover;
+  display: table;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  font-size:20px;
+   }
+.table-cell {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+.middle {
+  min-height: 200px;
+  background: white;
+  border: 5px dashed red ;
+  margin-left: 5em;
+  max-width: 700px;
+  padding: 1rem;
+}
+.quote:before,
+.quote:after{
+  content: '"';
+}
+.who:before {
+  content: "-\a0"
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<script>
+
+var onepunch = [
+	{
+		"quote":"I could go one step farther If I wanted to.",
+		"when":"Goku"
+        },
+        
+       { "quote":"I would rather be a brainless monkey than a heartless monster.",
+		"when":"Goku"
+		},
+        
+        { "quote":"The ocean is so salty because everyone pees in it",
+		"when":"Goku"
+        },
+        
+        { "quote":"Power comes in response to a need, not a desire. You have to create that need.",
+		"when":"Goku"
+        },
+        
+        { "quote":"Your new form is burning through more power than your body can supply. You should hav ewaited until you were used to this form and knew how to regulate it before you started picking fights",
+		"when":"Goku"
+        },
+        
+        { "quote":"You’ll laugh at your fears when you find out who you are.",
+		"when":"Piccolo"
+        },
+        
+        { "quote":"Sometimes, we have to look beyond what we want and do what’s best",
+		"when":"Piccolo"
+        },
+        
+        { "quote":"Gohan, you showed me that power is nothing without being guided without love.",
+		"when":"Piccolo"
+        },
+        
+        { "quote":"You failed to protect your planet, because of your own leniency. The only way to avoid this outcome is to send Frieza back to his flower garden.",
+		"when":"Whiz"
+        },
+        
+        { "quote":"Before creation… must come destruction!",
+		"when":"Beerus"
+        },
+        
+        { "quote":"What’s wrong Frieza? Is your brain another one of your weak and under used muscles?",
+		"when":"Vegeta"
+        },
+        
+        { "quote":"I find it hard to believe that my cells are in your body. How could you have turned out so ugly? What a waste. Although, it’s obvious where you’ve gotten most of your strength",
+		"when":"Vegeta"
+        },
+        
+        { "quote":"There’s no such thing as fair or unfair in battle. There is only victory or in your case, defeat",
+		"when":"Vegeta"
+        },
+        
+        { "quote":"I am a god with a heart, but there’s one thing I cannot tolerate… people who don’t pay their proper respect to others",
+		"when":"Beerus"
+        },
+        
+
+        { "quote":"Nobody preaching about justice is ever a good guy",
+		"when":"Beerus"
+		},
+];
+function getQuote(){
+  var i = _.random(0,onepunch.length);
+  $('.js-quote').text(onepunch[i].quote);
+  $('.js-whoSaidIt').text(onepunch[i].when);
+}
+
+</script>
+</head>
+<body>
+
+    <div class="table-cell">
+        <div class="middle">
+        <h1>Dragon Ball Z Quotes</h1>
+      
+        <p class="quote js-quote">Click the button below to get a random quote.</p>
+        <p class="who js-whoSaidIt"></p>
+        <button class="btn btn-success" onclick="getQuote()">Get Quote</button>
+        </div>
+      </div>
+      
+<script>
+   
+</script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      html, body {
+	 margin: 0;
+	 padding: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-image: url(https://wallpapercave.com/wp/wp1848100.jpg);
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center center;
+}
+ .container {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 100%;
+	 width: 100%;
+}
+ .slider {
+	 display: flex;
+	 height: 450px;
+	 width: 100%;
+	 border-left: 1px solid #000;
+	 border-right: 1px solid #000;
+}
+ .slider-container {
+	 max-width: 1000px;
+	 width: 100vw;
+	 height: 450px;
+	 display: flex;
+	 flex-direction: column;
+	 position: relative;
+	 justify-content: center;
+	 align-items: center;
+	 padding-top: 150px;
+}
+ .slider-container #logo {
+	 width: 700px;
+	 position: absolute;
+	 z-index: 1;
+	 top: -66px;
+}
+ .slider .slide {
+	 background: red;
+	 border: 2px solid #000;
+	 flex: 1 0 auto;
+	 display: flex;
+	 overflow: hidden;
+	 position: relative;
+	 transition: all 0.5s ease-in-out;
+}
+ .slider .slide strong {
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 80px;
+	 position: absolute;
+	 bottom: 0px;
+	 width: 100vw;
+	 left: 10px;
+	 color: rgba(0, 0, 0, 0.6);
+}
+ .slider .slide:hover {
+	 flex: 10;
+	 background-position-x: 50% !important;
+}
+ .slider .slide.majin {
+	 background-color: #9e2bf7;
+	 background-blend-mode: luminosity;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1gxbmxRiyP2j3R-hpfzSUKxA6Dp6Hh4je");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.krillin {
+	 background-color: WHITE;
+	 background-image: url(https://qph.fs.quoracdn.net/main-qimg-987f49a6d04406e0b62f70a366bf6b7a.webp);
+	 background-position: center center;
+	 background-size: auto 500px;
+	 background-position: 56% -121%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.android18 {
+	 background-color: BLACK;
+	 background-image: url(https://i.pinimg.com/originals/20/59/29/205929c75ba5c780701772f92bc6398c.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 47% -18%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.android17 {
+	 background-color: BLACK;
+	 background-image: url(https://wallpapercave.com/wp/wp8477088.jpg);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 63% -6%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.goku {
+	 background-color:BLACK;
+	 background-image: url(https://wallpapercave.com/wp/wp6592996.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 37% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.vegeta {
+	 background-color: WHITE;
+	 background-image: url(https://cdn.myanimelist.net/images/characters/11/252841.jpg);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 40% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.gohan {
+	 background-color:BLACK;
+	 background-image: url(http://pm1.narvii.com/6823/541774f6ebe95929ec317cfbab03ed7c9a867689v2_00.jpg);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% -9%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.master {
+	 background-color:WHITE;
+	 background-image: url(https://i.pinimg.com/474x/ac/00/b3/ac00b3b43dadc0473280ead55176874a.jpg);
+	 background-position: center center;
+	 background-size: auto 500px;
+	 background-position: 50% -81%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.tien {
+	 background-color: WHITE;
+	 background-image: url(https://pbs.twimg.com/media/C_JXIfFWsAI1FJp.jpg);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% -18%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.piccolo {
+	 background-color: BLACK;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1Q-BW5g7oJrXOZimcaIkpbjXgHOom62T_");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 60% 27%;
+	 background-repeat: no-repeat;
+}
+ 
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="slider-container">
+        <img src="https://www.yourlieinapril.com/assets/img/top/logo.png" id="logo" />
+        <div class="slider">
+        
+          <div class="slide android18">
+            <strong>RYOTA WATARI</strong>
+          </div>
+          <div class="slide android17">
+            <strong>KAORI</strong>
+          </div>
+          <div class="slide goku">
+            <strong>KOSEI ARIMA</strong>
+          </div>
+          <div class="slide vegeta">
+            <strong>TSUBAKI SAWABE</strong>
+          </div>
+          <div class="slide gohan">
+            <strong>HIROKO SETO</strong>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

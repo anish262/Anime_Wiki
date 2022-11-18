@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: url("https://wallpapercave.com/wp/wp1812465.jpg");
+  background-size: cover;
+  display: table;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  font-size:25px;
+  
+   }
+.table-cell {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+.middle {
+  min-height: 200px;
+  background: white ;
+  opacity : 0.7;
+  border: 5px dashed  skyblue  ;
+  margin-left: 2em;
+  max-width: 700px;
+  padding: 1rem;
+}
+.quote:before,
+.quote:after{
+  content: '"';
+}
+.who:before {
+  content: "-\a0"
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<script>
+
+var onepunch = [
+	{
+		"quote":"Don’t get rest after a success." ,
+		"when":"Shinchan"
+        },
+        
+       { "quote":"To Be a Man you must have honor, and passions.",
+		"when":"Shinchan"
+		},
+        
+        { "quote":"I never make the same mistake twice, I make it 5 to 6 times just to be sure.",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"Mujhe zindagi me ek hi apsara mili, par wo bhi pencil thi!",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"Ab mai itna bhi kuch khaas nhi",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"Mera naam hai Shinchan Nohara aur mai 5 saal ka hu, mujhe shimlamirch pasand nhi.",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"Action Beeeeeaammmmm...... beep beep beep beep beep beep beep....",
+		"when":"Shinchan "
+        },
+        
+        { "quote":"Tarif karne ke liye shukriya! Hehehehe!",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"Hey baby kya tumhe shimla mirch pasand hai?’(Hey baby do you like capsicum?)",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"Oh! Mujhe lagta hai maine aapko kahin dekha hai !(I think I've seen you somewhere! )",
+		"when":"Lmao ded, Shinchan to his dad!"
+        },
+        
+        { "quote":"Best Alarm clock in the world is your mom.",
+		"when":"Shinchan"
+        },
+        
+        { "quote":"I am the only one who applies sadness one minute and laughs another second",
+		"when":"Shinchan"
+        },
+];
+function getQuote(){
+  var i = _.random(0,onepunch.length);
+  $('.js-quote').text(onepunch[i].quote);
+  $('.js-whoSaidIt').text(onepunch[i].when);
+}
+
+</script>
+</head>
+<body>
+
+    <div class="table-cell">
+        <div class="middle">
+           
+        <h1 style="color:darkblue"> <b>Shinchan</b> </h1>
+      
+        <p class="quote js-quote">Click the button below to get a random quote.</p>
+        <p class="who js-whoSaidIt"></p>
+        <button class="btn btn-success" onclick="getQuote()">Get Quote</button>
+        </div>
+      </div>
+      
+<script>
+   
+</script>
+
+</body>
+</html>

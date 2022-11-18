@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      html, body {
+	 margin: 0;
+	 padding: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-image: url(https://wallpapercave.com/wp/wp2556196.jpg);
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center center;
+}
+ .container {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 100%;
+	 width: 100%;
+}
+ .slider {
+	 display: flex;
+	 height: 450px;
+	 width: 100%;
+	 border-left: 1px solid #000;
+	 border-right: 1px solid #000;
+}
+ .slider-container {
+	 max-width: 1000px;
+	 width: 100vw;
+	 height: 450px;
+	 display: flex;
+	 flex-direction: column;
+	 position: relative;
+	 justify-content: center;
+	 align-items: center;
+	 padding-top: 150px;
+}
+ .slider-container #logo {
+	 width: 700px;
+	 position: absolute;
+	 z-index: 1;
+	 top: -66px;
+}
+ .slider .slide {
+	 background: red;
+	 border: 2px solid #000;
+	 flex: 1 0 auto;
+	 display: flex;
+	 overflow: hidden;
+	 position: relative;
+	 transition: all 0.5s ease-in-out;
+}
+ .slider .slide strong {
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 80px;
+	 position: absolute;
+	 bottom: 0px;
+	 width: 100vw;
+	 left: 10px;
+	 color: rgba(0, 0, 0, 0.6);
+}
+ .slider .slide:hover {
+	 flex: 10;
+	 background-position-x: 50% !important;
+}
+ .slider .slide.majin {
+	 background-color: #9e2bf7;
+	 background-blend-mode: luminosity;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1gxbmxRiyP2j3R-hpfzSUKxA6Dp6Hh4je");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.krillin {
+	 background-color: #f5f37a;
+	 background-image: url("https://www.freepnglogos.com/uploads/doraemon-png/cartoon-characters-girl-doraemon-new-png-images-1.png");
+	 background-position: center center;
+	 background-size: auto 500px;
+	 background-position: 56% -121%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.android18 {
+	 background-color: #ff3974;
+	 background-image: url(https://wallpapercave.com/wp/wp1920196.jpg);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 47% -18%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.android17 {
+	 background-color: #170cf0;
+	 background-image: url(https://wallpapercave.com/wp/wp6994569.jpg);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 63% -6%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.goku {
+	 background-color: #ff6f51;
+	 background-image: url(https://www.freepnglogos.com/uploads/doraemon-png/doraemon-in-short-shorts-say-hello-hands-cartoon-characters-doraemon--0.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 37% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.vegeta {
+	 background-color: #00a6f3;
+	 background-image: url(https://www.freepnglogos.com/uploads/doraemon-png/download-doraemon-png-transparent-image-and-clipart-33.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 40% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.gohan {
+	 background-color: #ceff57;
+	 background-image: url("https://upload.wikimedia.org/wikipedia/it/e/e8/Takeshi_Goda.png");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% -9%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.master {
+	 background-color: #ff6fff;
+	 background-blend-mode: luminosity;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1qSVuAMMkwyVOMv6GbXNdqMZAu_i94e0m");
+	 background-position: center center;
+	 background-size: auto 500px;
+	 background-position: 50% -81%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.tien {
+	 background-color: #00e1d3;
+	 background-blend-mode: luminosity;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1gKQBpPq0SAcGBAjCeU8jDgRdvj1Itx_t");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% -18%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.piccolo {
+	 background-color: #69936c;
+	 background-blend-mode: luminosity;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1Q-BW5g7oJrXOZimcaIkpbjXgHOom62T_");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 60% 27%;
+	 background-repeat: no-repeat;
+}
+ 
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="slider-container">
+        <img src="https://www.freepnglogos.com/uploads/doraemon-png/doraemon-logo-movies-hindi-dubbed-download-34.png" width="200" alt="doraemon logo png, doraemon clipart" id="logo" />
+        <div class="slider">
+          
+          <div class="slide krillin">
+            <strong>DOREMI</strong>
+          </div>
+          <div class="slide android18">
+            <strong>SHIZUKA</strong>
+          </div>
+          <div class="slide android17">
+            <strong>SUNIO</strong>
+          </div>
+          <div class="slide goku">
+            <strong>NOBITA</strong>
+          </div>
+          <div class="slide vegeta">
+            <strong>DORAEMON</strong>
+          </div>
+          <div class="slide gohan">
+            <strong>TAKESHI GODA</strong>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

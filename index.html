@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Anime Wiki</title>
+<link rel="shortcut icon" href="https://66.media.tumblr.com/44fce6ca01d7954008cdde066c046339/tumblr_inline_phmpm1O3Wk1usqe6q_1280.png" type="image/x-icon"> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:papyrus, fantasy;
+  font-size:22px;
+}
+header {
+  background-image:url("Img/HEAD1.jpg");
+  background-repeat:no-repeat;
+  padding: 20px;
+  text-align: center;
+  font-size: 32px;
+  font-family:arial;
+  font-weight:bold;
+  color:darkblue;
+  width:100%;
+  height: 720px;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color:transparent;
+  border: red dashed 2px;
+  /* border-radius:; */
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  /* background-color: ; */
+  padding: 10px;
+  /* border: ; */
+}
+
+footer {
+  background-image:url("Img/FOOT1.jpg");
+  background-repeat:no-repeat;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.scrollable {
+  height: 720px;
+  overflow-y: scroll;
+}
+
+/*Slider*/
+
+.Click_slide {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          
+            height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #666666;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .card {
+            position: absolute;
+            height: 350px;
+            width: 100%;
+            max-width: 850px;
+            margin: auto;
+            background-color: transparent;
+            border-radius: 25px;
+            box-shadow: 10px 0 50px rgba(255,0,0,0.5);
+            overflow:hidden;
+          }
+          
+          .card .inner_part {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0 0 30px;
+            height: 350px;
+            position: absolute;
+            overflow: hidden;
+          }
+          
+          #slideImg:checked ~ .inner_part {
+            padding: 0;
+            transition: .1s ease-in;
+          }
+          
+          .inner_part .img {
+            height: 260px;
+            width: 260px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border-radius: 20px;
+            box-shadow: 5px 5px 8px rgba(255,0,0,0.2);
+          }
+          
+          #slideImg:checked ~ .inner_part .img {
+           height: 350px;
+           width: 850px;
+           z-index: 99;
+           transition: .3s .2s ease-in;
+          }
+          
+          .img img {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            opacity: 0;
+            transition: .6s;
+          }
+          
+          #slide_1:checked ~ .inner_part .img_1,
+          #slide_2:checked ~ .inner_part .img_2,
+          #slide_3:checked ~ .inner_part .img_3,
+          #slide_4:checked ~ .inner_part .img_4,
+          #slide_5:checked ~ .inner_part .img_5,
+          #slide_6:checked ~ .inner_part .img_6,
+          #slide_7:checked ~ .inner_part .img_7,
+          #slide_8:checked ~ .inner_part .img_8,
+          #slide_9:checked ~ .inner_part .img_9,
+          #slide_10:checked ~ .inner_part .img_10 {
+            opacity: 1;
+            transition-delay: .2s;
+          }
+          
+          .content {
+            padding: 0 20px 0 35px;
+            width: 530px;
+            margin-left: 50px;
+            margin-right: 30px;
+            opacity: 0;
+            transition: .6s; 
+          }
+          
+          #slideImg:checked ~ .inner_part .content {
+            display: none;
+          }
+          
+          #slide_1:checked ~ .inner_part .content_1,
+          #slide_2:checked ~ .inner_part .content_2,
+          #slide_3:checked ~ .inner_part .content_3,
+          #slide_4:checked ~ .inner_part .content_4,
+          #slide_5:checked ~ .inner_part .content_5,
+          #slide_6:checked ~ .inner_part .content_6,
+          #slide_7:checked ~ .inner_part .content_7,
+          #slide_8:checked ~ .inner_part .content_8,
+          #slide_9:checked ~ .inner_part .content_9,
+          #slide_10:checked ~ .inner_part .content_10 {
+            opacity: 1;
+            margin-left: 0;
+            z-index: 100;
+            transition-delay: .3s;
+          }
+          
+          .content .title {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            text-decoration:underline;
+          }
+          
+          .content .text {
+            font-size: 19px;
+            margin: 0 auto 30px 5px;
+            line-height: 1.5em;
+            text-align: justify;
+          }
+          
+          .content button {
+            padding: 15px 20px;
+            border: none;
+            font-size: 16px;
+            color:white;
+        	font-weight:bold;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            cursor: pointer;
+            outline: none;
+            background:#333;
+            float: right;
+            margin-right: 5px;
+          }
+          
+          .content button:hover {
+            background:red;
+          }
+          
+          .slider {
+            position: absolute;
+            bottom: 25px;
+            left: 55%;
+            transform: translateX(-50%);
+            z-index: 1;
+          }
+          
+          #slideImg:checked ~ .slider {
+            display: none;
+          }
+          
+          .slider .slide {
+            position: relative;
+            height: 10px;
+            width: 20px;
+            background:#333;
+            border-radius: 5px;
+            display: inline-flex;
+            margin: 0 3px;
+            cursor: pointer;
+          }
+          
+          
+          .slider .slide:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: -100%;
+            background: rgba(255,0,0,0.8);
+            border-radius: 10px;
+            transform: scaleX(0);
+            transition: transform .6s;
+            transform-origin: left;
+          }
+          
+          #slide_1:checked ~ .slider .slide_1:before,
+          #slide_2:checked ~ .slider .slide_2:before,
+          #slide_3:checked ~ .slider .slide_3:before,
+          #slide_4:checked ~ .slider .slide_4:before,
+          #slide_5:checked ~ .slider .slide_5:before,
+          #slide_6:checked ~ .slider .slide_6:before,
+          #slide_7:checked ~ .slider .slide_7:before,
+          #slide_8:checked ~ .slider .slide_8:before,
+          #slide_9:checked ~ .slider .slide_9:before,
+          #slide_10:checked ~ .slider .slide_10:before {
+            transform: scaleX(1);
+            width: 100%;
+          }
+          
+          .input_slider {
+            display: none;
+          }
+
+
+/*Scroll*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent; 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: red; 
+}
+
+
+
+
+
+.dark{
+            background-color: black;
+            color: #e6e6e6;
+            cursor: pointer;
+        }
+
+h1{
+  font-size:36px;font-weight:bold;
+  animation: he 1s ease-in-out infinite alternate;
+
+}
+@-webkit-keyframes he {
+  from {
+    text-shadow: 0 0 2px #fff, 0 0 5px #fff,
+     0 0 10px black, 0 0 15px black,
+      0 0 20px black,
+      0 0 30px black, 0 0 32px black;
+  }
+  
+  to {
+    text-shadow: 0 0 5px #fff,
+     0 0 10px red, 0 0 15px red,
+      0 0 20px blue, 0 0 30px red,
+       0 0 32px red, 0 0 36px red;
+  }
+}
+
+
+/*Heading*/
+#header1{font-family:papyrus,fantasy;
+
+padding:10px;
+margin-top:270px;
+width:100%;
+
+
+}
+.glow {
+  font-size: 80px;
+  color: white;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  background-color:black;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff,
+     0 0 30px red, 0 0 40px red,
+      0 0 50px red,
+      0 0 60px red, 0 0 70px red;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff,
+     0 0 30px black, 0 0 40px black,
+      0 0 50px black, 0 0 60px black,
+       0 0 70px black, 0 0 80px black;
+  }
+}
+
+
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  display: table;
+  
+}
+
+
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid white;
+  background-color: black;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  transform: scale(1)
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+/*LINKS*/
+
+a:link {
+  color: default;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+
+<!-- link navbar(CSS) -->
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+
+
+<!-- link searchbar(CSS) -->
+    <link rel="stylesheet" type="text/css" href="css/searchbar.css">
+</head>
+
+
+
+
+<body>
+
+
+<div class = "TOP">
+<ul>
+  <li><a href="#">Home</a></li>
+  <li onclick="myFunction()">
+  
+   <a>Dark/Light</a>
+
+</li>
+
+<li>
+    <a href="Form.html">Sign Up</a>
+  </li>
+
+
+  <li class="dropdown">
+      <a href="Gallery.html">Gallery</a>
+    </div>
+  </li>
+  
+</ul>
+</div>
+<header>
+  <h2 id="header1" class="glow"> Anime Wiki</h2>
+  <a href="#" class="scroll-down" address="true"></a>
+</header>
+
+<br><br>
+
+<center><div id="dd1" style="border: dashed 2px red;padding:2px; width:100%"><marquee>❤❤Welcome to Anime Wiki!! Hope you find your favourite anime content here!!❤❤</marquee></div></center>
+
+<center><iframe id="iframe2" name="iframe2" src="https://www.youtube.com/embed/wXfGqmjjgpc?autoplay=1&mute=1&controls=0&playlist=wXfGqmjjgpc&loop=1" width="100%" height="600px" style="border:2px dashed red;" allowfullscreen="true">
+</iframe></center>
+
+<section>
+  <nav>
+    <!-- SeARCH bAR-->
+     <!-- input tag -->
+     <div>
+    <input id="searchbar" onkeyup="search_anime()" type="text"
+        name="search" placeholder="Search anime...🔍">
+      <div>
+    <!-- ordered list -->
+    <ol id='list' style="font-size:20px">
+        <a href="Web/naruto.html"><li class="anime">Naruto</li>
+        <a href="Web/DragonBallZ.html"><li class="anime">Dragon Ball Z</li></a>
+        <a href="Web/one piece.html"><li class="anime">One Piece</li></a>
+        <a href="Web/AOT.html"><li class="anime">Attack on titan</li></a>
+        <a href="Web/OnePunchMan.html"><li class="anime">One Punch Man</li></a>
+        <a href="Web/TokyoGhoul.html"><li class="anime">Tokyo Ghoul</li></a>
+        <a href="Web/YourName.html"><li class="anime">Your Name</li></a>
+        <a href="Web/Shinchan.html"><li class="anime">Shinchan</li></a>
+        <a href="Web/doraemon.html"><li class="anime">Doraemon</li></a>
+        <a href="Web/YourLieInApril.html"><li class="anime">Your Lie in April</li></a>
+        <a href="Web/jujutsu kaisen.html"><li class="anime">Jujutsu Kaisen</li></a>
+    </ol>
+  </div>
+  </div>
+  <!--<img src="nav1.png" style="height:300px;width:300px">-->
+    <div>
+    <h1 style="font-size:36px;font-weight:bold;text-decoration:underline;">Trending!!</h1>
+    <div>1. Naruto
+    <a target="iframe2" href="https://www.youtube.com/embed/oE3Ty5YRXiw?autoplay=1">
+      <img class="PLAY" src="https://cdn.shopify.com/s/files/1/0024/9803/5810/products/556692-Product-0-I-637750956758954003_903x.jpg?v=1639459348" style="height:400px;width:280px;border:black 1px solid; background-size: cover;"></div><br></a>
+      
+     <div>2. Attack On Titan
+    <a target="iframe2" href="https://www.youtube.com/embed/o_go-8TFBXs?autoplay=1">
+    <img class="PLAY" src="https://w0.peakpx.com/wallpaper/378/556/HD-wallpaper-eren-yaeger-mikasa-armin.jpg" style="height:400px;width:280px;border:black 1px solid"></div><br></a>
+
+    <div>3. One Piece<a target="iframe2" href="https://www.youtube.com/embed/S8_YwFLCh4U?autoplay=1">
+    <img class="PLAY" src="https://wallpapers.com/images/high/one-piece-4k-cover-art-ncfciduqxhppiukm.webp" style="height:400px;width:280px;border:black 1px solid"></div><br></a>
+
+    <div>4. Jujutsu Kaisen<a target="iframe2" href="https://www.youtube.com/embed/YKJyP8L6QEs?autoplay=1">
+    <img class="PLAY" src="https://image.tmdb.org/t/p/original/qevPHRMWL0jFB2PpwpygI8E15t8.jpg" style="height:400px;width:280px;border:black 1px solid"></div><br></a>
+
+    <div>5. Your Name<a target="iframe2" href="https://www.youtube.com/embed/xU47nhruN-Q?autoplay=1">
+    <img class="PLAY" src="https://img.goldposter.com/2016/12/kimi-no-na-wa_poster_goldposter_com_23.jpeg?x-oss-process=image/resize,m_fill,h_800,w_558/quality,q_80" style="height:400px;width:280px;border:black 1px solid"></div></a>
+  </div>
+
+  🧡💛💚💙💜🤎🖤🧡💛💚
+
+  </nav>
+  
+  <article> 
+    <h1>What is Anime🤔</h1>
+    <p>
+    In its most basic form, anime refers to animation. Interestingly enough, the name itself isn’t an abbreviation of the English word animation. Instead, it’s how you say “animated cartoon” (written アニメ) in Japanese. To a Japanese viewer, anime is any cartoon, whether it’s made in Japan or not. Outside of Japan, however, the term anime has come to mean “animation made in Japan,” or more broadly, any animated show or movie that uses signature aspects of Japanese-style animation, like vibrant colors, dramatic panning, and characteristic facial expressions.  
+  </p>
+  
+  <h1>Why Anime Wikia?</h1>
+  <p>
+  	
+  	Okay! So why anime wikia?? Why Japanese culture in India.. Why we're fascinated by this anime world and we tend to share it with all of you? 
+We get it.. India has a huge and diverse cultures and amazing life changing stories and lessons from vedas, spiritual texts, but we are lacking that part in our today's era of screens and animation and obviously in our shows, cartoons and movies. Childhood age is the most important stage where a child is like a wet clay turning into a beautiful pottery. But in that age a child in India learns that you get strong by eating ladoos and samosas, indeed cartoons depicting life is very easy and one get things without hardwork, whereas an anime watching kid grows by knowing hard work, crafting talent, happiness isn't enjoyed alone but rather when shared with others. 
+<br>
+Anime not only teaches about getting stronger through your mere hardwork but it teaches despite having any difficult situations in life, you can still pass through and lead a beautiful life. Where it teaches about peace, teaches about humanity, teaches about teamwork along with entertainment, visuals and intense music and colors.
+<br>
+Animes aren't for mere kids but for adults and teens too. Also by learning the cultures of other people we come closer to world peace, we delete the stereotypes set by society, we understand that we all are humans and we all go through same emotions of peace and pain.
+<br> 
+So 'Anime Wikia' is an introduction to you all and a gate to the this wonderful, fascinating and life changing land of Anime.
+
+  </p>
+
+  <br><br>
+<h1 style="font-size:36px;font-weight:bold;text-decoration:underline;">Popular Animes </h1>
+
+
+
+<br>
+
+<!--Slider -->
+
+<div class="Click_Slide">
+  <div class="card">
+      <input class="input_slider" type="radio" name="select" id="slide_1" checked>
+      <input class="input_slider" type="radio" name="select" id="slide_2">
+      <input class="input_slider" type="radio" name="select" id="slide_3">
+      <input class="input_slider" type="radio" name="select" id="slide_4">
+      <input class="input_slider" type="radio" name="select" id="slide_5">
+      <input class="input_slider" type="radio" name="select" id="slide_6">
+      <input class="input_slider" type="radio" name="select" id="slide_7">
+      <input class="input_slider" type="radio" name="select" id="slide_8">
+      <input class="input_slider" type="radio" name="select" id="slide_9">
+      <input class="input_slider" type="radio" name="select" id="slide_10">
+      <input class="input_slider" type="checkbox" id="slideImg">
+    
+      <div class="slider">
+        <label for="slide_1" class="slide slide_1"></label>
+        <label for="slide_2" class="slide slide_2"></label>
+        <label for="slide_3" class="slide slide_3"></label>
+        <label for="slide_4" class="slide slide_4"></label>
+        <label for="slide_5" class="slide slide_5"></label>
+        <label for="slide_6" class="slide slide_6"></label>
+        <label for="slide_7" class="slide slide_7"></label>
+        <label for="slide_8" class="slide slide_8"></label>
+        <label for="slide_9" class="slide slide_9"></label>
+        <label for="slide_10" class="slide slide_10"></label>
+      </div>
+    
+      <div class="inner_part">
+        <label for="slideImg" class="img">
+          <img class="img_1" src="https://ranktopten.com/upload/so/n-/son-goku-dragon-ball-z-17_c_400x400.jpg">
+        </label>
+        <div class="content content_1">
+          <div class="title">Dragon Ball</div>
+          <div class="text">
+            The Dragon Ball anime and manga franchise feature an ensemble cast of characters created by Akira Toriyama. 
+          </div>
+          <a target="iframe1" href="Web/DragonBallZ.html"><button class="READ">Read More</button></a>
+        </div>
+      </div>
+    
+      <div class="inner_part">
+        <label for="slideImg" class="img">
+          <img class="img_2" src="https://yt3.ggpht.com/a/AATXAJxaTHfd1VHcHky1wapvf8-2vf-McaZCrntNgUAkZg=s900-c-k-c0xffffffff-no-rj-mo">
+        </label>
+        <div class="content content_2">
+          <div class="title">Naruto</div>
+          <div class="text">
+            Naruto (ナルト) is a Japanese manga series written and
+             illustrated by Masashi Kishimoto. 
+          </div>
+          <a target="iframe1" href="Web/naruto.html"><button class="READ">Read More</button></a>
+        </div>
+      </div>
+    
+      <div class="inner_part">
+        <label for="slideImg" class="img">
+          <img class="img_3" src="https://yt3.ggpht.com/a/AATXAJyRz446d-kNlpKHdutJ0CrmfgfaoNQK6UMzpNmS9w=s900-c-k-c0xffffffff-no-rj-mo">
+        </label>
+        <div class="content content_3">
+          <div class="title">One Piece</div>
+          <div class="text">One Piece is the name the world gave to all the 
+            treasure gained by the Pirate King Gol D. Roger. 
+          </div>
+          <a target="iframe1" href="Web/one piece.html"><button class="READ">Read More</button></a>
+        </div>
+      </div>
+
+      <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_4" src="https://avatarfiles.alphacoders.com/912/91229.jpg">
+          </label>
+          <div class="content content_4">
+            <div class="title">Attack On Titan</div>
+            <div class="text"> Attack on Titan is set in a world where humanity lives inside cities surrounded by
+               enormous walls due to the Titans, gigantic humanoid beings who devour humans.
+            </div>
+            <a target="iframe1" href="Web/AOT.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_5" src="https://lampukecildotcom.files.wordpress.com/2014/12/doraemon-17.jpg?w=500">
+          </label>
+          <div class="content content_5">
+            <div class="title">Doraemon</div>
+            <div class="text">
+              Doraemon, a cat robot from the 22nd century, is sent to help Nobita Nobi.
+            </div>
+            <a target="iframe1" href="Web/doraemon.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_6" src="https://yt3.ggpht.com/a/AATXAJyaWYIONdtIBJFsZBiH38cc2imNLvcj_tnPPA=s900-c-k-c0xffffffff-no-rj-mo"">
+          </label>
+          <div class="content content_6">
+            <div class="title">Shinchan</div>
+            <div class="text">
+              Shinnosuke "Shin-chan" Nohara is a little boy who does everything he
+               can to annoy his parents and teachers (and succeeds).
+            </div>
+            <a target="iframe1" href="Web/Shinchan.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_7" src="https://i5.walmartimages.com/asr/ab4b0b56-0d16-4e7c-bbac-9cec918fca7a_1.4049286702ff453562e73638accb7b11.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff">
+          </label>
+          <div class="content content_7">
+            <div class="title">One Punch Man</div>
+            <div class="text">
+              One-Punch Man is a Japanese superhero
+               franchise created by the artist ONE. It tells the story of Saitama, a superhero who can
+                defeat any opponent with a single punch.
+            </div>
+            <a target="iframe1" href="Web/OnePunchMan.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_8" src="https://i.pinimg.com/originals/a3/52/65/a3526534b3fc7578c3a8d6fa15b92d44.jpg">
+          </label>
+          <div class="content content_8">
+            <div class="title">Your Lie In April</div>
+            <div class="text">
+              Your Lie in April follows a piano prodigy
+                named Kōsei Arima, who had become famous as a child
+               musician after dominating many competitions.
+            </div>
+            <a target="iframe1" href="Web/YourLieInApril.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_9" src="https://d2ykdu8745rm9t.cloudfront.net/cover/i/002/424/657/Newest-Japan-Anime-Tokyo-Ghoul-Cosplay-PU-Mask-Tokyo-Props-Ghoul-font-b-Halloween-b-font-8034.jpg?rect=0,140,400,400&q=98&fm=jpg&fit=max">
+          </label>
+          <div class="content content_9">
+            <div class="title">Tokyo Ghoul</div>
+            <div class="text">
+              A Tokyo college student is attacked by a ghoul, a superpowered human
+               who feeds on human flesh. He survives, but has become part ghoul and becomes a fugitive on the run.
+            </div>
+            <a target="iframe1" href="Web/TokyoGhoul.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_10" src="https://www.denofgeek.com/wp-content/uploads/2021/04/jujutsu-kaisen-season-2-movie-prequel-details.jpeg?w=400&h=400&crop=1&resize=400%2C400">
+          </label>
+          <div class="content content_10">
+            <div class="title">Jujutsu Kaisen</div>
+            <div class="text">
+              The story of Jujutsu Kaisen is set in a world where Cursed Spirits feed on unsuspecting 
+              humans and fragments of the legendary and feared demon Ryomen Sukuna have been lost and scattered about.
+            </div>
+            <a target="iframe1" href="Web/jujutsu kaisen.html"><button class="READ">Read More</button></a>
+          </div>
+        </div>
+
+
+
+    </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Iframe-->
+
+<iframe id="iframe1" name="iframe1" src="dbz.html" width="100%" height="600" style="border:1px solid black;" accesskey="1" allowfullscreen="1">
+</iframe>
+
+
+<br>
+<br><br>
+<div >
+    <h1>Featured Character And Quote</h1>
+  
+    <span style="text-align:left"><img src="Img/jiraiya1.png" style="height:500px;width:400px;">
+  </span>
+
+  <span style="width:400px;height:500px;position:absolute;margin-left:10px;font-size:32px">
+     <br><br>
+    “When people get hurt, they learn to hate.
+    When people hurt others, they become hated and raced with guilt.
+    But knowing that pain allows people to be kind.
+    Pain allows people to grow… and how you grow is up to you.”
+    <br>
+    -Jiraiya💫</span>
+    
+
+
+  </div>
+  <br><br>
+ </article>
+</section>
+
+<footer>
+  <div style="background-color:white;color:black;text-align:center">
+
+    Project By- 
+
+    😎Anish Mohan
+
+  </div>
+</footer>
+<!-- linking jS SEARCH bar-->
+    <script src="js/searchbar.js"></script>
+
+<script>
+
+      
+        $(".READ").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#iframe1").offset().top
+    }, "slow");
+});
+
+        $(".PLAY").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("marquee").offset().top
+    }, "slow");
+});
+
+
+        function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark");
+
+        }
+
+         $(function() {
+    $('.scroll-down').click (function() {
+      $('html, body').animate({scrollTop: $('#dd1').offset().top }, 'slow');
+      return false;
+        });
+      });
+
+  /*nav*/
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *, *::before, *::after {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  background-image: url('');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  padding: 20px;
+  background-color: rgba(20,20,20,0.9);
+  color: #fff;
+  text-align: center;
+  font-family: papyrus, fantasy;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px -1px #efefef;
+}
+
+.carousel_wrapper {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(-360deg) translateZ(-412px); 
+  animation: swirl 40s steps(10000, end) infinite;
+}
+
+.slide {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 320px;
+  height: 200px;
+}
+
+.slide img {
+  width: 300px;
+  height: 200px;
+  border: 3px inset rgba(47, 115, 201, 0.75);
+  box-shadow: 0 0 15px 3px rgba(110, 72, 221, 0.9);
+}
+
+
+.slide.one {
+  transform: rotateY(0deg) translateZ(412px);
+}
+.slide.two {
+  transform: rotateY(40deg) translateZ(412px);
+}
+.slide.three {
+  transform: rotateY(80deg) translateZ(412px);
+}
+.slide.four {
+  transform: rotateY(120deg) translateZ(412px);
+}
+.slide.five {
+  transform: rotateY(160deg) translateZ(412px);
+}
+.slide.six {
+  transform: rotateY(200deg) translateZ(412px);
+}
+.slide.seven {
+  transform: rotateY(240deg) translateZ(412px);
+}
+.slide.eight {
+  transform: rotateY(280deg) translateZ(412px);
+}
+.slide.nine {
+  transform: rotateY(320deg) translateZ(412px);
+}
+
+
+
+@keyframes swirl {   
+  from {
+    transform: rotateY(-360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+} 
+        </style>
+    </head>
+
+    <body>
+        <h1>Shinchan</h1>
+
+<div class="carousel_wrapper">
+  <div class="carousel">
+    <div class="slide one">
+      <img src="https://wallpaperset.com/w/full/a/1/f/416843.jpg" />
+    </div>
+    <div class="slide two">
+      <img src="https://wallpapercave.com/wp/wp1812465.jpg" />
+    </div>
+    <div class="slide three">
+      <img src="https://wallpapercave.com/wp/wp1812469.jpg" />
+    </div>
+    <div class="slide four">
+      <img src="https://wallpapercave.com/wp/wp1812464.jpg" />
+    </div>
+    <div class="slide five">
+      <img src="https://wallpapercave.com/wp/wp3062383.jpg" />
+    </div>
+    <div class="slide six">
+      <img src="https://getwallpapers.com/wallpaper/full/0/5/7/927148-large-shin-chan-wallpapers-1920x1080-windows-xp.jpg" />
+    </div>
+    <div class="slide seven">
+      <img src="https://images6.alphacoders.com/109/thumb-1920-1092633.png" />
+    </div>
+    <div class="slide eight">
+      <img src="https://www.desktopbackground.org/download/1024x600/2013/06/08/588735_shinchan-cartoon-images-wallpapers-hd-wide_1024x768_h.jpg" />
+    </div>
+    <div class="slide nine">
+      <img src="https://wallpapercave.com/wp/wp9066536.jpg" />
+    </div>
+  </div>
+</div>
+
+
+    </body>
+
+</html>

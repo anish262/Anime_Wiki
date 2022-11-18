@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      html, body {
+	 margin: 0;
+	 padding: 0;
+	 width: 100%;
+	 height: 100%;
+	 background-image: url(https://wallpapercave.com/wp/wp5511074.jpg);
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center center;
+}
+ .container {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 100%;
+	 width: 100%;
+}
+ .slider {
+	 display: flex;
+	 height: 450px;
+	 width: 100%;
+	 border-left: 1px solid #000;
+	 border-right: 1px solid #000;
+}
+ .slider-container {
+	 max-width: 1000px;
+	 width: 100vw;
+	 height: 450px;
+	 display: flex;
+	 flex-direction: column;
+	 position: relative;
+	 justify-content: center;
+	 align-items: center;
+	 padding-top: 150px;
+}
+ .slider-container #logo {
+	 width: 700px;
+	 position: absolute;
+	 z-index: 1;
+	 top: -66px;
+}
+ .slider .slide {
+	 background: red;
+	 border: 2px solid #000;
+	 flex: 1 0 auto;
+	 display: flex;
+	 overflow: hidden;
+	 position: relative;
+	 transition: all 0.5s ease-in-out;
+}
+ .slider .slide strong {
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 80px;
+	 position: absolute;
+	 bottom: 0px;
+	 width: 100vw;
+	 left: 10px;
+	 color: rgba(0, 0, 0, 0.6);
+}
+ .slider .slide:hover {
+	 flex: 10;
+	 background-position-x: 50% !important;
+}
+ .slider .slide.majin {
+	 background-color: #9e2bf7;
+	 background-image: url("https://drive.google.com/uc?export=view&id=1gxbmxRiyP2j3R-hpfzSUKxA6Dp6Hh4je");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.krillin {
+	 background-color: white;
+	 background-image: url(https://png.pngitem.com/pimgs/s/16-167108_no-caption-provided-god-ussop-hd-png-download.png);
+	 background-position: center center;
+	 background-size: auto 500px;
+	 background-position: 56% -121%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.android18 {
+	 background-color: white;
+	 background-image: url(https://png.pngitem.com/pimgs/s/37-375520_unlimited-adventure-monkey-d-one-piece-nico-robin.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 47% -18%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.android17 {
+	 background-color: white;
+	 background-image: url(https://png.pngitem.com/pimgs/s/560-5600406_cartoon-hd-png-download.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 63% -6%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.goku {
+	 background-color: #ff6f51;
+     background-image: url(https://png.pngitem.com/pimgs/s/37-375367_transparent-one-piece-png-anime-one-piece-luffy.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 37% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.vegeta {
+	 background-color: white;
+	 background-image: url(https://png.pngitem.com/pimgs/s/150-1508481_one-piece-sanji-transparent-png-one-piece-sanji.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 40% 0%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.gohan {
+	 background-color: white;
+	 background-image: url(https://png.pngitem.com/pimgs/s/497-4977669_roronoa-zoro-hd-png-download.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% -9%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.master {
+	 background-color:white;
+	 background-image: url("https://png.pngitem.com/pimgs/s/509-5096698_celebrity-tony-tony-chopper-sidereal-astrology-reading-tony.png");
+	 background-position: center center;
+	 background-size: auto 500px;
+	 background-position: 50% -81%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.tien {
+	 background-color:white;
+	 background-image: url(https://png.pngitem.com/pimgs/s/10-104845_portgas-d-ace-one-piece-ace-png-transparent.png);
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 50% -18%;
+	 background-repeat: no-repeat;
+}
+ .slider .slide.piccolo {
+	 background-color:white;
+	 background-image: url("https://png.pngitem.com/pimgs/s/527-5273983_shanks-one-piece-png-transparent-png.png");
+	 background-position: center center;
+	 background-size: auto 700px;
+	 background-position: 60% 27%;
+	 background-repeat: no-repeat;
+}
+ 
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="slider-container">
+        <img src="https://www.freepnglogos.com/uploads/one-piece-logo-15.png" width="200" alt="one piece hd blue transparent logo" id="logo" />
+        <div class="slider">
+          
+          <div class="slide krillin">
+            <strong>USSOP</strong>
+          </div>
+          <div class="slide android18">
+            <strong>NICO ROBIN</strong>
+          </div>
+          <div class="slide android17">
+            <strong>NAMI</strong>
+          </div>
+          <div class="slide goku">
+            <strong>MONKEY D.LUFY</strong>
+          </div>
+          <div class="slide vegeta">
+            <strong>VINSMOKE SANJI</strong>
+          </div>
+          <div class="slide gohan">
+            <strong>RORONOA ZORO</strong>
+          </div>
+          <div class="slide master">
+            <strong>TONY TONY CHOPER</strong>
+          </div>
+          <div class="slide tien">
+            <strong>PORTGAS D.ACE</strong>
+          </div>
+          <div class="slide piccolo">
+            <strong>SHANKS</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

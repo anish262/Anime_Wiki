@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: url(https://wallpaper-house.com/data/out/5/wallpaper2you_68109.jpg );
+  background-size: cover;
+  display: table;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  font-size:25px;
+  
+   }
+.table-cell {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+.middle {
+  min-height: 200px;
+  background: white ;
+  opacity : 0.7;
+  border: 5px dashed  skyblue  ;
+  margin-left: 5em;
+  max-width: 700px;
+  padding: 1rem;
+}
+.quote:before,
+.quote:after{
+  content: '"';
+}
+.who:before {
+  content: "-\a0"
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<script>
+
+var onepunch = [
+	{
+		"quote":"If you don’t like the hand that fate’s dealt you with, fight for a new one." ,
+		"when":"Naruto Uzumaki"
+        },
+        
+       { "quote":" I Hate A Lot Of Things, And I Don't Particularly Like Anything",
+		"when":"Sasuke Uchiha"
+		},
+        
+        { "quote":"The things that are most important aren't written in books. You have to learn them by experiencing them yourself",
+		"when":"Sakura Haruno"
+        },
+        
+        { "quote":"In Society, Those Who Don't Have Many Abilities Tend To Complain More",
+		"when":" Hatake Kakashi "
+        },
+        
+        { "quote":"The true measure of a shinobi is not how he lives but how he dies",
+		"when":"Jiraiya"
+        },
+        
+        { "quote":"I wonder…do you have it, young as you are… the Will of Fire?",
+		"when":"Sarutobi Hiruzen(Third hokage)"
+        },
+        
+        { "quote":"I have faith in you , Naruto ",
+		"when":"Minato Namikaze"
+        },
+        
+        { "quote":"It is not wise to judge others based on your own preconceptions and by their appearances",
+		"when":"Itachi Uchiha"
+        },
+        
+        { "quote":"You're right, all efforts are pointless...if you don't believe in yourself",
+		"when":"Guy Sensei"
+        },
+        
+        { "quote":"My motto is to be stronger than yesterday, if I have to I'll be stronger than half a day ago, even a minute ago",
+		"when":"Rock Lee"
+        },
+        
+        { "quote":"In order to escape a road of solitude, one has to work hard, and forge a new path with their own power",
+		"when":"Gaara"
+        },
+        
+        { "quote":"I will die before I let you touch him!",
+		"when":"Tsunade"
+        },
+        
+        { "quote":"Either people change or they die before they do. It’s one or the other",
+		"when":"Orochimaru",
+        },
+        
+        { "quote":"Wake up to reality! Nothing ever goes as planned in this world. The longer you live, the more you realize that in this reality only pain, suffering and futility exist",
+		"when":"Madara Uchiha"
+        },
+        
+
+        { "quote":"Sometimes You Must Hurt In Order To Know, Fall In Order To Grow, Lose In Order To Gain, Because Life’s Greatest Lessons Are Learned Through",
+		"when":"Pain"
+		},
+];
+function getQuote(){
+  var i = _.random(0,onepunch.length);
+  $('.js-quote').text(onepunch[i].quote);
+  $('.js-whoSaidIt').text(onepunch[i].when);
+}
+
+</script>
+</head>
+<body>
+
+    <div class="table-cell">
+        <div class="middle">
+           
+        <h1> <b>Naruto Quotes</b> </h1>
+      
+        <p class="quote js-quote">Click the button below to get a random quote.</p>
+        <p class="who js-whoSaidIt"></p>
+        <button class="btn btn-success" onclick="getQuote()">Get Quote</button>
+        </div>
+      </div>
+      
+<script>
+   
+</script>
+
+</body>
+</html>

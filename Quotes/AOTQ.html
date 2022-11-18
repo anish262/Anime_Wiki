@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: url(https://images8.alphacoders.com/835/835076.png );
+  background-size: cover;
+  display: table;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  font-size:25px;
+  
+   }
+.table-cell {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+.middle {
+  min-height: 200px;
+  background: white ;
+  opacity : 0.7;
+  border: 5px dashed  ;
+  margin-left: 2em;
+  max-width: 700px;
+  padding: 1rem;
+}
+.quote:before,
+.quote:after{
+  content: '"';
+}
+.who:before {
+  content: "-\a0"
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<script>
+
+var onepunch = [
+	{
+		"quote":"I Never Needed To Happen." ,
+		"when":"Eren Jeager"
+        },
+        
+       { "quote":"This world is cruel… But it’s also very beautiful",
+		"when":"Mikasa Ackerman"
+		},
+        
+        { "quote":"I'd rather die than become a burden",
+		"when":"Armin Arlert"
+        },
+        
+        { "quote":"If Somebody Told You To Die, Would You?",
+		"when":"Annie Leonhart"
+        },
+        
+        { "quote":" If You Begin To Regret, You'll Dull Your Future Decisions And Let Others Make Your Choices For You",
+		"when":"Erwin"
+        },
+        
+        { "quote":"The only thing we're allowed to do... is to believe that we won't regret the choice we made",
+		"when":"Levi Ackerman "
+        },
+        
+        { "quote":"If there's something you don't understand, learn to understand it ",
+		"when":"Hange Zoe"
+        },
+        
+        { "quote":"Right now we’ve got no choice but to try. We gotta believe there’s a way to beat him!",
+		"when":"Jean Kirstein"
+        },
+        
+        { "quote":"We need to stop living for others. From now on…Let’s live for ourselves!",
+		"when":"Historia Riess"
+        },
+        
+        { "quote":"Don't Give Up Hope!",
+		"when":"Sasha Braus"
+        },
+        
+        { "quote":"Isn’t war a terrible thing?Finally with this the war will be over",
+		"when":"Zeke Jeager"
+        },
+        
+        { "quote":"You do what you have to do. Just keep moving. That’s how it works, right?",
+		"when":"Reiner"
+        },
+        
+        { "quote":"None Of You Have Done Anything Wrong",
+		"when":"Berthold",
+        },
+        
+        { "quote":"Everyone is a slave to something .",
+		"when":"Kenny Ackerman"
+        },
+        
+
+        { "quote":"There Was One Thing I Wished For With All My Heart. If I’m Ever Given A Second Chance In Life, I Want To Live For Only Myself. That Is My Sincere Wish",
+		"when":"Ymir"
+		},
+];
+function getQuote(){
+  var i = _.random(0,onepunch.length);
+  $('.js-quote').text(onepunch[i].quote);
+  $('.js-whoSaidIt').text(onepunch[i].when);
+}
+
+</script>
+</head>
+<body>
+
+    <div class="table-cell">
+        <div class="middle">
+           
+        <h1> <b>Shingeki No Kyojin </b> </h1>
+      
+        <p class="quote js-quote">Click the button below to get a random quote.</p>
+        <p class="who js-whoSaidIt"></p>
+        <button class="btn btn-success" onclick="getQuote()">Get Quote</button>
+        </div>
+      </div>
+      
+<script>
+   
+</script>
+
+</body>
+</html>

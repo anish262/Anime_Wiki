@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: url(https://images.wallpapersden.com/image/download/jujutsu-kaisen-satoru-gojo_bGtubmuUmZqaraWkpJRmbmdlrWZlbWU.jpg);
+  background-size: cover;
+  display: table;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  font-size:25px;
+  
+   }
+.table-cell {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: table-cell;
+
+}
+.middle {
+  min-height: 200px;
+  background: white ;
+  opacity :0.8;
+  border: 5px dashed   ;
+  margin-left: 2em;
+  max-width: 650px;
+  padding: 1rem;
+}
+.quote:before,
+.quote:after{
+  content: '"';
+}
+.who:before {
+  content: "-\a0"
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+<script>
+
+var onepunch = [
+	{
+		"quote":"Searching for someone to blame is just a pain" ,
+		"when":"Gojo Satoru"
+        },
+        
+       { "quote":"I don’t know how I’ll feel when I’m dead, But I don’t want to regret the way I lived",
+		"when":"Itadori Yuji"
+		},
+        
+        { "quote":"Stand proud, you are strong",
+		"when":"Sakuna"
+        },
+        
+        { "quote":"Education is making people realize things",
+		"when":"Masamichi Yaga"
+        },
+        
+        { "quote":" Cheer up guys, at least I’m here",
+		"when":"Nobara Kugisaki"
+        },
+        
+        { "quote":"I’m going to help people unequally.",
+		"when":" Megumi Fushiguro "
+        },
+        
+        { "quote":"You should use your strength to help others.",
+		"when":"Wasuke Itadori."
+        },
+        
+        { "quote":"You Can't Let Yourself Get Trapped In An Ideal Of Indifference",
+		"when":"Mahito"
+        },
+        
+        { "quote":"Salmon!",
+		"when":"Inumaki"
+        },
+];
+function getQuote(){
+  var i = _.random(0,onepunch.length);
+  $('.js-quote').text(onepunch[i].quote);
+  $('.js-whoSaidIt').text(onepunch[i].when);
+}
+
+</script>
+</head>
+<body>
+
+    <div class="table-cell">
+        <div class="middle">
+           
+        <h1> <b>Jujutsu Kaisen </b> </h1>
+      
+        <p class="quote js-quote">Click the button below to get a random quote.</p>
+        <p class="who js-whoSaidIt"></p>
+        <button class="btn btn-success" onclick="getQuote()" >Get Quote</button>
+        </div>
+      </div>
+      
+<script>
+   
+</script>
+
+</body>
+</html>
